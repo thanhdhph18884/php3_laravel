@@ -13,11 +13,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
-    {{-- copy các link từ navigation sang --}}
-    <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('sona-master/css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('sona-master/css/font-awesome.min.css') }}" type="text/css">
@@ -51,47 +47,12 @@
                         <a href="#" class="primary-btn">Discover Now</a>
                     </div>
                 </div>
-                {{-- <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
-                    <div class="booking-form">
-                        <h3>Booking Your Hotel</h3>
-                        <form action="#">
-                            <div class="check-date">
-                                <label for="date-in">Check In:</label>
-                                <input type="text" class="date-input" id="date-in">
-                                <i class="icon_calendar"></i>
-                            </div>
-                            <div class="check-date">
-                                <label for="date-out">Check Out:</label>
-                                <input type="text" class="date-input" id="date-out">
-                                <i class="icon_calendar"></i>
-                            </div>
-                            <div class="select-option">
-                                <label for="guest">Guests:</label>
-                                <select id="guest">
-                                    <option value="">2 Adults</option>
-                                    <option value="">3 Adults</option>
-                                </select>
-                            </div>
-                            <div class="select-option">
-                                <label for="room">Room:</label>
-                                <select id="room">
-                                    <option value="">1 Room</option>
-                                    <option value="">2 Room</option>
-                                </select>
-                            </div>
-                            <button type="submit">Check Availability</button>
-                        </form>
-                    </div>
-                </div> --}}
             </div>
         </div>
         <div class="hero-slider owl-carousel">
             <div class="hs-item set-bg" data-setbg="{{ asset('sona-master/img/hero/hero-1.jpg') }}"></div>
             <div class="hs-item set-bg" data-setbg="{{ asset('sona-master/img/hero/hero-2.jpg') }}"></div>
             <div class="hs-item set-bg" data-setbg="{{ asset('sona-master/img/hero/hero-3.jpg') }}"></div>
-            @foreach ($banner as $iteam)
-                <div class="hs-item set-bg" data-setbg="{{ asset($iteam->images) }}"></div>
-            @endforeach
         </div>
     </section>
     <section class="services-section spad">
@@ -100,27 +61,30 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <span>What We Do</span>
-                        <h2>Danh mục khách sạn</h2>
+                        <h2>Chi tiết đơn hàng</h2>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                @foreach ($categories as $iteam)
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="service-item">
-                            <i class="flaticon-036-parking"></i>
-                            <h4>{{ $iteam->category_name }}</h4>
-                            <p>
-                                {{ $iteam->mota }}
-                            </p>
-                        </div>
-                    </div>
-                @endforeach
-                {{ $categories->links() }}
+            <div class="card text-white bg-primary mb-3" style="width:40%">
+                <p>Chúc mừng bạn đã đặt phòng thành công</p>
+                <br>
+                <p>chi tiết hóa đơn bao gồm</p>
+                <br>
+                <p>Tên người đặt: {{ $hoadon->user }}</p>
+                <br>
+                <p>Email người đặt:{{ $hoadon->email }}</p>
+                <br>
+                <p>Mã phòng thuê:{{ $hoadon->room_id }}</p>
+                <br>
+                <p>Số ngày thuê:{{ $hoadon->date_rent }}</p>
+                <br>
+                <p>Số tiền phải trả là :{{ $hoadon->money }}</p>
+                <br>
+                <button class="btn btn-success" type="onclick">Thanh toán ngay</button>
+                <a class="btn btn-warning" href="http://127.0.0.1:8000">Quay lại</a>
             </div>
         </div>
     </section>
-    @include('user.content')
     {{-- chỗ này để khoảng trắng --}}
     <section class="testimonial-section spad">
         <div class="container">
@@ -141,3 +105,39 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+{{-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <title>Hóa đơn</title>
+</head>
+
+<body>
+    <div class="container">
+      
+    </div>
+
+</body>
+
+</html> --}}

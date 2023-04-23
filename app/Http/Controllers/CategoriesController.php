@@ -15,13 +15,12 @@ class CategoriesController extends Controller
     public function index(Request $request)
     {
         $search = $request->query('search');
-
         $categories = Categories::when($search, function ($query, $search) {
             return $query->where('category_name', 'like', '%' . $search . '%');
         })
             ->orderBy('cate_id', 'DESC')
             ->paginate(5);
-        return view('categories.list', compact('categories', 'search'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('categories.list', compact('categories', 'search'));
     }
 
     public function create()
@@ -33,7 +32,7 @@ class CategoriesController extends Controller
     {
         $validatedData = $request->validate([
             'category_name' => 'required|unique:categories,category_name|max:255',
-            'mota'=>'required',
+            'mota' => 'required',
         ], [
             'category_name.required' => 'Vui lòng nhập tên danh mục.',
             'category_name.unique' => 'Tên danh mục đã tồn tại.',
@@ -42,13 +41,11 @@ class CategoriesController extends Controller
 
         Categories::create([
             'category_name' => $request->category_name,
-            'mota'=>$request->mota,
+            'mota' => $request->mota,
         ]);
 
         return redirect()->route('categories.index')->with('success', 'Thêm danh mục thành công.');
     }
-
-
     public function edit($id)
     {
         $category = Categories::findOrFail($id);
@@ -59,10 +56,9 @@ class CategoriesController extends Controller
     {
         $validatedData = $request->validate([
             'category_name' => 'required|unique:categories|max:255',
-            'mota'=>'required',
+            'mota' => 'required',
         ], [
             'category_name.required' => 'Vui lòng nhập tên danh mục.',
-            'category_name.unique' => 'Tên danh mục đã tồn tại.',
             'mota.required' => 'Vui lòng nhập mô tả phòng',
 
         ]);

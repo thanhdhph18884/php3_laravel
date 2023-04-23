@@ -161,10 +161,7 @@
                                         </ul> --}}
                                     </li>
                                     <li><a href="http://127.0.0.1:8000/">News</a></li>
-                                    <li>
-                                        <a href="http://127.0.0.1:8000/hoadon"><i
-                                                class="fa-solid fa-cart-shopping"></i>Cart</a>
-                                    </li>
+
                                 </ul>
                             </nav>
                             <div class="nav-right search-switch">
@@ -185,18 +182,16 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <h2>Chi tiết phòng</h2>
-                        {{-- <div class="bt-option">
-                            <a href="./home.html">Home</a>
-                            <span>Rooms</span>
-                        </div> --}}
+                        @if (Session::has('success'))
+                            <div class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Breadcrumb Section End -->
-
-    <!-- Room Details Section Begin -->
     {{-- chi tiết phòng --}}
     <section class="room-details-section spad">
         <div class="container">
@@ -215,15 +210,15 @@
                                         <i class="icon_star"></i>
                                         <i class="icon_star-half_alt"></i>
                                     </div>
-                                    <a href="#">Booking Now</a>
+                                    <a href="http://127.0.0.1:8000/hoadon/create">Booking Now</a>
                                 </div>
                             </div>
                             <h2>{{ number_format($rooms->price, 0, ',', '.') }}<span>/Pernight</span></h2>
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td class="r-o">Size:</td>
-                                        <td>30 ft</td>
+                                        <td class="r-o">Mã phòng:</td>
+                                        <td>{{ $rooms->room_id }}</td>
                                     </tr>
                                     <tr>
                                         <td class="r-o">Capacity:</td>
@@ -253,50 +248,13 @@
                 </div>
                 {{-- đặt lịch --}}
                 <div class="col-lg-4">
-                    <div class="room-booking">
-                        <h3>Nhập thông tin đặt phòng</h3>
-                        <p id="success-message" style="display:none"></p>
-                        <form method="POST" action="{{ route('order.store') }}" onsubmit="addcart(event)">
-                            @csrf
-                            <div class="datecheck-">
-                                <label for="date-out">Tên khách hàng</label>
-                                <input type="text" name="name" />
-                                <span id="error-message" style="color: red;"></span>
-                            </div>
-                            <div class="check-date">
-                                <label for="date-out">Email</label>
-                                <input type="email" name="email" />
-                                <span id="error-message" style="color: red;"></span>
-                            </div>
-                            <div class="check-date">
-                                <label for="date-in">ảnh phòng</label>
-                                <img src="{{ asset($rooms->images) }}" alt="">
-
-                            </div>
-                            <div class="check-date">
-                                <label for="date-in">Ngày bắt đầu</label>
-                                <input type="date" name="date-in" onchange="updatePrice()" />
-                                <span id="error-message" style="color: red;"></span>
-                            </div>
-                            <div class="check-date">
-                                <label for="date-out">Ngày kết thúc</label>
-                                <input type="date" name="date-out" onchange="updatePrice()" />
-                                <span id="error-message" style="color: red;"></span>
-                            </div>
-                            <div class="check-date">
-                                <label for="date-out">giá thuê</label>
-                                <input type="text" name="price" id="price" onchange="updatePrice()"
-                                    value={{ number_format($rooms->price, 0, ',', '.') }} />
-                            </div>
-                            <button onclick="addcart()">
-                                Đặt ngay
-                            </button>
-                        </form>
-                    </div>
+                    @include('hoadon.create')
                 </div>
+
             </div>
         </div>
     </section>
+
     <!-- Room Details Section End -->
 
     <!-- Footer Section Begin -->
@@ -312,64 +270,29 @@
     <script src="{{ asset('sona-master/js/main.js') }}"></script>
     {{-- xử lý đặt hàng --}}
     <script>
+        var initialPrice = parseInt(document.getElementById("price").value.replace(/[^0-9]/g, ''));
+
         function updatePrice() {
-            // Chuyển đổi giá thuê thành kiểu số
+            // Lấy giá thuê và chuyển đổi thành kiểu số
             var price = parseInt(document.getElementById("price").value.replace(/[^0-9]/g, ''));
-            var checkInDate = document.getElementsByName("date-in")[0].value;
-            var checkOutDate = document.getElementsByName("date-out")[0].value;
-            if (price && checkInDate && checkOutDate) { // Kiểm tra giá và ngày hợp lệ
-                checkInDate = new Date(checkInDate);
-                checkOutDate = new Date(checkOutDate);
-                var sumday = (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24);
-                if (sumday > 0) { // Kiểm tra số ngày hợp lệ
-                    var pricenew = sumday * price;
-                    document.getElementById("price").value = pricenew.toLocaleString('vi-VN') + ' VND';
-                }
-            }
-        }
-        function addcart(event) {
-            event.preventDefault();
-            var errorMessage = document.getElementById("error-message");
-            var nameInput = document.getElementsByName("name")[0];
-            var emailInput = document.getElementsByName("email")[0];
-            var checkInInput = document.getElementsByName("date-in")[0];
-            var checkOutInput = document.getElementsByName("date-out")[0];
-            var priceInput = document.getElementById("price");
-            var valid = true;
-            if (nameInput.value.trim() === "") {
-                errorMessage.innerText = "Vui lòng nhập tên khách hàng";
-                valid = false;
-            } else if (emailInput.value.trim() === "") {
-                errorMessage.innerText = "Vui lòng nhập email";
-                valid = false;
-            } else if (checkInInput.value.trim() === "") {
-                errorMessage.innerText = "Vui lòng nhập ngày bắt đầu";
-                valid = false;
-            } else if (checkOutInput.value.trim() === "") {
-                errorMessage.innerText = "Vui lòng nhập ngày kết thúc";
-                valid = false;
-            } else if (priceInput.value.trim() === "") {
-                errorMessage.innerText = "Vui lòng nhập giá thuê";
-                valid = false;
-            }
-            if (valid) {
-                errorMessage.style.display = "none";
-                alert("Bạn đã đặt phòng thành công");
-                setTimeout(function() {
-                    nameInput.value = "";
-                    emailInput.value = "";
-                    checkInInput.value = "";
-                    checkOutInput.value = "";
-                    priceInput.value = "";
-                    location.reload();
-                }, 500); // Thời gian đợi trước khi reload trang (0,5 giây)
+            // Lấy ngày bắt đầu và ngày kết thúc
+            var checkInDate = new Date(document.getElementsByName("date_in")[0].value);
+            var checkOutDate = new Date(document.getElementsByName("date_out")[0].value);
+            // Kiểm tra xem ngày bắt đầu và kết thúc có hợp lệ không
+            if (checkOutDate > checkInDate) {
+                // Tính số ngày thuê
+                var numDays = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
+                // Tính giá thuê
+                var priceNew = numDays * price;
+                // Hiển thị giá thuê mới và số ngày thuê
+                document.getElementById("num_of_days").value = numDays;
+                document.getElementById("price").value = priceNew.toLocaleString('vi-VN') + ' VND';
             } else {
-                errorMessage.style.display = "block";
+                // Hiển thị thông báo lỗi nếu ngày bắt đầu và kết thúc không hợp lệ
+                document.getElementById("error-message").innerHTML = "Ngày kết thúc phải lớn hơn ngày bắt đầu";
             }
         }
     </script>
-
-
 </body>
 
 </html>

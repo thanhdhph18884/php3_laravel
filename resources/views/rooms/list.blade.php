@@ -60,7 +60,6 @@
                                         <a href="{{ route('rooms.destroy', $iteam->room_id) }}"
                                             onclick="return confirm('Ban co muon xoa khong?')"
                                             class="btn btn-danger">Delete</a>
-
                                     </td>
                                 </tr>
                             @endforeach

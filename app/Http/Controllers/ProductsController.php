@@ -20,7 +20,7 @@ class  ProductsController extends Controller
             ->orderBy('room_id', 'DESC')
             ->paginate(5);
         // dd($rooms);
-        return view('rooms.list', compact('rooms'))->with('i', (request()->input('page', 1) - 1) * 3);
+        return view('rooms.list', compact('rooms'));
     }
     public function create()
     {

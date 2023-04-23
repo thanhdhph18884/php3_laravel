@@ -69,11 +69,13 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="tn-right">
-                            <div class="top-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            {{-- <div class="top-social">
+                                @include('layouts.navigation')
+                            </div> --}}
+                            <div>
+                                <a class="btn btn-success" href="http://127.0.0.1:8000/register">Đăng ký</a>
+                                <a class="btn btn-success" href="http://127.0.0.1:8000/dashboard">Quản lý tài khoản</a>
+                                <a class="btn btn-success" href="http://127.0.0.1:8000/login">Đăng nhập</a>
                             </div>
                             {{-- <a href="#" class="bk-btn">Booking Now</a>
                             <div class="language-option">

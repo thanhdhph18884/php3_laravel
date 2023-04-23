@@ -11,7 +11,7 @@ class BannerController extends Controller
     {
         $banners = BannerModel::paginate(5);
 
-        return view('banners.list', compact('banners'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('banners.list', compact('banners'));
     }
     public function create()
     {
