@@ -64,23 +64,23 @@
         </div>
         <nav class="mainmenu mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./rooms.html">Rooms</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
+                <li class="active"><a href="http://127.0.0.1:8000/">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/">Rooms</a></li>
+                <li><a href="http://127.0.0.1:8000/">About Us</a></li>
                 <li>
-                    <a href="./pages.html">Pages</a>
+                    <a href="http://127.0.0.1:8000/">Pages</a>
                     <ul class="dropdown">
                         <li>
-                            <a href="./room-details.html">Room Details</a>
+                            <a href="http://127.0.0.1:8000/">Room Details</a>
                         </li>
                         <li>
-                            <a href="./blog-details.html">Blog Details</a>
+                            <a href="http://127.0.0.1:8000/">Blog Details</a>
                         </li>
                         <li><a href="#">Family Room</a></li>
                         <li><a href="#">Premium Room</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">News</a></li>
+                <li><a href="http://127.0.0.1:8000/">News</a></li>
                 <li>
                     <i class="fa-solid fa-cart-shopping"></i>Cart</a>
                 </li>

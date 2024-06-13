@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('hoa_don', function (Blueprint $table) {
             $table->integerIncrements('hoadon_id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->integer('room_id');
             $table->integer('date_rent');
+            $table->string('user');
             $table->string('money');
+            $table->string('phone');
+            $table->string('email');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

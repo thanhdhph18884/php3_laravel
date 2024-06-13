@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('thongke', function (Blueprint $table) {
-            $table->integerIncrements('id');
-            $table->integer('sale_id');
-            $table->integer('room_id');
+        Schema::create('thongKes', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('rooms_id');
+            $table->string('totals');
+            $table->unsignedInteger('booking_count');
+            $table->string('most_booking');
+            $table->string('least_booking');
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('thongke');
+        Schema::dropIfExists('thongKes');
     }
 };

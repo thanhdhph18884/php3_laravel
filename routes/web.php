@@ -89,13 +89,11 @@ Route::prefix('')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('user.index');
     Route::get('/detail/{id}', [UserController::class, 'detail'])->name('detail');
 });
-// Route::group(['prefix' => 'checkout'], function () {
-//     Route::get('/', [HoadonsController::class, 'form'])->name('checkout');
-//     Route::post('/', [HoadonsController::class, 'submit_form'])->name('checkout');
-// });
+
 Route::group(['prefix' => 'hoadon'], function () {
     Route::get('/', [HoadonsController::class, 'index'])->name('hoadon.index')->middleware('auth');
     Route::get('/create', [HoadonsController::class, 'create'])->name('hoadon.create')->middleware('auth');
     Route::post('/store', [HoadonsController::class, 'store'])->name('hoadon.store')->middleware('auth');
-    // Route::get('/hoadon', [HoadonsController::class, 'detail'])->name('detail');
+    Route::post('/vnPay' , [HoadonsController::class,'vnPay_payment'])->name('hoadon.vnPay')->middleware('auth');
+    Route::get('/success' , [HoadonsController::class,'success'])->name('hoadon.seccess')->middleware('auth');;
 });

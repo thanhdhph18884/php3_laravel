@@ -25,12 +25,6 @@
     <link rel="stylesheet" href="{{ asset('sona-master/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('sona-master/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('sona-master/css/style.css') }}" type="text/css">
-    <style>
-        .aside {
-            width: 160px;
-            background-color: rgb(230, 210, 210);
-        }
-    </style>
 </head>
 
 <body>
@@ -40,7 +34,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="hero-text">
-                        <h1>Thành ph18884 Hotel</h1>
+                        <h1>Tiến Đạt Hotel</h1>
                         <p>Phục vụ tận tình chu đáo với các dịch vụ đẳng cấp, xứng đáng với số tiền
                             mà bạn bỏ ra
                         </p>
@@ -65,24 +59,40 @@
                     </div>
                 </div>
             </div>
-            <div class="card text-white bg-primary mb-3" style="width:40%">
-                <p>Chúc mừng bạn đã đặt phòng thành công</p>
-                <br>
-                <p>chi tiết hóa đơn bao gồm</p>
-                <br>
-                <p>Tên người đặt: {{ $hoadon->user }}</p>
-                <br>
-                <p>Email người đặt:{{ $hoadon->email }}</p>
-                <br>
-                <p>Mã phòng thuê:{{ $hoadon->room_id }}</p>
-                <br>
-                <p>Số ngày thuê:{{ $hoadon->date_rent }}</p>
-                <br>
-                <p>Số tiền phải trả là :{{ $hoadon->money }}</p>
-                <br>
-                <button class="btn btn-success" type="onclick">Thanh toán ngay</button>
-                <a class="btn btn-warning" href="http://127.0.0.1:8000">Quay lại</a>
-            </div>
+            <table class="table" style="border: 1px solid #cdcdcd; box-shadow: #2b3e50">
+                <p>Thông tin đã được gửi về email của bạn</p>
+                <thead>
+                <tr>
+                    <th scope="col">Tên người đặt</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mã phòng</th>
+                    <th scope="col">Số ngày thuê</th>
+                    <th scope="col">Số tiền phải trả</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Thanh toán ngay</th>
+                    <th scope="col">Back</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{$hoadon->user}}</td>
+                    <td>{{$hoadon->email}}</td>
+                    <td>{{$hoadon->room_id}}</td>
+                    <td>{{$hoadon->date_rent}}</td>
+                    <td>{{$hoadon->money}}</td>
+                    <td>{{$hoadon->phone}}</td>
+                    <td>
+                        <form method="POST" action="{{ route('hoadon.vnPay') }}">@csrf
+                            <button name="redirect" class="btn btn-success" type="submit">Thanh toán ngay</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" href="http://127.0.0.1:8000">Quay lại</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </section>
     {{-- chỗ này để khoảng trắng --}}
@@ -135,7 +145,7 @@
 
 <body>
     <div class="container">
-      
+
     </div>
 
 </body>

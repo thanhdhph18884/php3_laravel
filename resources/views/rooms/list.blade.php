@@ -53,7 +53,7 @@
                                     </td>
                                     <td>{{ $iteam->description }}</td>
                                     <td>{{ number_format($iteam->price, 0, ',', '.') }} VNĐ</td>
-                                    <td>{{ $iteam->categories->category_name }}</td>
+                                    <td>{{ $iteam->categories?->category_name }}</td>
                                     <td>
                                         <a href="{{ route('rooms.edit', $iteam->room_id) }}"
                                             class="btn btn-warning">Edit</a>

@@ -51,12 +51,16 @@
                 <span class="text-danger">{{ $errors->first('price') }}</span>
             @endif
         </div>
+        <div class="check-date">
+            <label for="date-out">Số điện thoại</label>
+            <input type="number" name="phone" id="phone"/>
+            @if ($errors->has('phone'))
+                <span class="text-danger">{{ $errors->first('phone') }}</span>
+            @endif
+        </div>
 
         <div class="check-date">
             <label for="">Bạn phải kiểm tra kỹ thông tin.</label>
-            <label for="">Không được sửa lại nếu sai sót.</label>
-            <label for="">Nếu nhập sai hãy reload lại </label>
-            <a class="btn btn-success" href="http://127.0.0.1:8000/">Reload</a>
         </div>
         <br>
         <br>

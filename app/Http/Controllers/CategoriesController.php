@@ -7,11 +7,7 @@ use App\Models\Categories;
 
 class CategoriesController extends Controller
 {
-    // public $category;
-    // public function __construct()
-    // {
-    //     $this->category  =  Categories::all();
-    // }
+
     public function index(Request $request)
     {
         $search = $request->query('search');

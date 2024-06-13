@@ -25,8 +25,8 @@
                             <h6>Địa chỉ</h6>
                             <ul>
                                 <li>99285939</li>
-                                <li>thanhdhph18884@fpt.edu.vn</li>
-                                <li>xuân phương - nam từ liêm - hà nội</li>
+                                <li>tiendathotel.vn</li>
+                                <li>hà nội</li>
                             </ul>
                         </div>
                     </div>
@@ -61,8 +61,8 @@
                                 Copyright &copy;
                                 <script>
                                     document.write(new Date().getFullYear());
-                                </script>Đinh Hữu Thành<i class="fa fa-heart" aria-hidden="true"></i> by
-                                <a href="https://colorlib.com" target="_blank">Dương hường</a>
+                                </script>Tiến Đạt Hotel<i class="fa fa-heart" aria-hidden="true"></i> by
+                                <a href="https://colorlib.com" target="_blank">Tiến Đạt</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
