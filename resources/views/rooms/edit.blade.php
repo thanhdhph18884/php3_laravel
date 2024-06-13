@@ -11,7 +11,8 @@
                     @csrf
                     <div class="form-group">
                         <label>Ảnh phòng</label>
-                        <input type="file" class="form-control @error('images') is-invalid @enderror" name="images">
+                        <input type="file" class="form-control @error('images') is-invalid @enderror" name="images"
+                            value="{{ old('images', $room->images) }}">
                         @error('images')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

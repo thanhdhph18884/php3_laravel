@@ -30,10 +30,10 @@
         </div>
         <nav class="mainmenu mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./rooms.html">Rooms</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
-                <li><a href="./pages.html">Pages</a>
+                    <li class="active"><a href="http://127.0.0.1:8000/">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/">Rooms</a></li>
+                <li><a href="http://127.0.0.1:8000/">About Us</a></li>
+                <li><a href="http://127.0.0.1:8000/">Pages</a>
                     {{-- <ul class="dropdown">
                         <li><a href="./room-details.html">Room Details</a></li>
                         <li><a href="#">Deluxe Room</a></li>
@@ -41,8 +41,8 @@
                         <li><a href="#">Premium Room</a></li>
                     </ul> --}}
                 </li>
-                <li><a href="./blog.html">News</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="http://127.0.0.1:8000/">News</a></li>
+                <li><a href="http://127.0.0.1:8000/">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -54,7 +54,7 @@
         </div>
         <ul class="top-widget">
             <li><i class="fa fa-phone"></i> 090909090</li>
-            <li><i class="fa fa-envelope"></i> thanhdhph18884@fpt.edu.vn</li>
+            <li><i class="fa fa-envelope"></i>tiendathotel.vn</li>
         </ul>
     </div>
     <header class="header-section">
@@ -64,28 +64,16 @@
                     <div class="col-lg-6">
                         <ul class="tn-left">
                             <li><i class="fa fa-phone"></i> 090909090</li>
-                            <li><i class="fa fa-envelope"></i> thanhdhph18884@fpt.edu.vn</li>
+                            <li><i class="fa fa-envelope"></i> tiendathotel.vn</li>
                         </ul>
                     </div>
                     <div class="col-lg-6">
                         <div class="tn-right">
-                            <div class="top-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            <div>
+                                <a class="btn btn-success" href="http://127.0.0.1:8000/register">Đăng ký</a>
+                                <a class="btn btn-success" href="http://127.0.0.1:8000/dashboard">Quản lý tài khoản</a>
+                                <a class="btn btn-success" href="http://127.0.0.1:8000/login">Đăng nhập</a>
                             </div>
-                            {{-- <a href="#" class="bk-btn">Booking Now</a>
-                            <div class="language-option">
-                                <img src="{{ asset('sona-master/img/flag.jpg') }}" alt="">
-                                <span>EN <i class="fa fa-angle-down"></i></span>
-                                <div class="flag-dropdown">
-                                    <ul>
-                                        <li><a href="#">Zi</a></li>
-                                        <li><a href="#">Fr</a></li>
-                                    </ul>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -105,19 +93,19 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./rooms.html">Rooms</a></li>
-                                    <li><a href="./about-us.html">About Us</a></li>
-                                    <li><a href="./pages.html">Pages</a>
+                                    <li class="active"><a href="http://127.0.0.1:8000/">Home</a></li>
+                                    <li><a href="http://127.0.0.1:8000/">Rooms</a></li>
+                                    <li><a href="http://127.0.0.1:8000/">About Us</a></li>
+                                    <li><a href="http://127.0.0.1:8000/">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="./room-details.html">Room Details</a></li>
-                                            <li><a href="./blog-details.html">Blog Details</a></li>
+                                            <li><a href="http://127.0.0.1:8000/">Room Details</a></li>
+                                            <li><a href="http://127.0.0.1:8000/">Blog Details</a></li>
                                             <li><a href="#">Family Room</a></li>
                                             <li><a href="#">Premium Room</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./blog.html">News</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                    <li><a href="http://127.0.0.1:8000/">News</a></li>
+                                    <li><a href="http://127.0.0.1:8000/">Contact</a></li>
                                 </ul>
                             </nav>
                             <div class="nav-right search-switch">

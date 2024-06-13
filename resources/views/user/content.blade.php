@@ -4,7 +4,7 @@
             <div class="row">
                 {{-- show danh mục ở đây --}}
                 @foreach ($rooms as $iteam)
-                    <div class="col-lg-3 col-md-4" style="margin-left:50px; margin-botton:-50px;">
+                    <div class="col-lg-3 col-md-4" style="margin-left:100px; margin-botton:-50px;">
                         <br>
                         <div class="room-item">
                             <img src="{{ asset($iteam->images) }}" style="width:500px; height:340px" alt="">

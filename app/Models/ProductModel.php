@@ -23,4 +23,8 @@ class ProductModel extends Model
     {
         return $this->belongsTo(Categories::class, 'cate_id');
     }
+    public function hoadon()
+    {
+        return $this->belongsTo(Hoadon::class, 'room_id');
+    }
 }

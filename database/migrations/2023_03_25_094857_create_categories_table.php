@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->integerIncrements('cate_id');
             $table->string('category_name');
+            $table->string('mota');
             $table->timestamps();
         });
     }

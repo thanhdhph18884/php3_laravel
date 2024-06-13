@@ -11,11 +11,11 @@
          <!-- Sidebar user panel (optional) -->
          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
              <div class="image">
-                 <img src="{{ asset('adminlte/docs/assets/img/admin.jpg') }}" class="img-circle elevation-2"
-                     alt="Image">
+{{--                 <img src="{{ asset('adminlte/docs/assets/img/admin.jpg') }}" class="img-circle elevation-2"--}}
+{{--                     alt="Image">--}}
              </div>
              <div class="info">
-                 <a href="#" class="d-block">Đinh Hữu Thành</a>
+                 <a href="#" class="d-block">Trương tiến Đạt</a>
              </div>
          </div>
 
@@ -126,21 +126,45 @@
                      <a href="#" class="nav-link nav-link active">
                          <i class="nav-icon fas fa-tachometer-alt"></i>
                          <p>
-                             Thống kê
+                             Hóa đơn
                              <i class="right fas fa-angle-left"></i>
                          </p>
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="" class="nav-link">
+                             <a href="{{ route('hoadon.index') }}" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Khách hàng đã đặt hàng</p>
                              </a>
                          </li>
                      </ul>
                  </li>
-
-
+                 <li class="nav-item menu-open">
+                     <a href="#" class="nav-link nav-link active">
+                         <i class="nav-icon fas fa-tachometer-alt"></i>
+                         <p>
+                             Khách hàng
+                             <i class="right fas fa-angle-left"></i>
+                         </p>
+                     </a>
+                     <ul class="nav nav-treeview">
+                         <li class="nav-item">
+                             <a href="{{ route('user.list') }}" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>Danh sách khách hàng</p>
+                             </a>
+                         </li>
+                     </ul>
+                 </li>
+                 <li class="nav-item menu-open">
+                     <a href="#" class="nav-link nav-link active">
+                         <i class="nav-icon fas fa-tachometer-alt"></i>
+                         <p>
+                             Thống kê
+                             <i class="right fas fa-angle-left"></i>
+                         </p>
+                     </a>
+                 </li>
              </ul>
          </nav>
          <!-- /.sidebar-menu -->

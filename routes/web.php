@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+//category
 Route::group(['prefix' => 'categories', 'middleware' => 'user'], function () {
     Route::get('/', [CategoriesController::class, 'index'])->name('categories.index');
     Route::get('/create', [CategoriesController::class, 'create'])->name('categories.create');
@@ -50,6 +51,7 @@ Route::group(['prefix' => 'categories', 'middleware' => 'user'], function () {
 //     Route::post('/update/{id}', [CategoriesController::class, 'update'])->name('categories.update');
 //     Route::get('/destroy/{id}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
 // });
+//rooms
 Route::group(['prefix' => 'rooms', 'middleware' => 'user'], function () {
     Route::get('/', [ProductsController::class, 'index'])->name('rooms.index');
     Route::get('/create', [ProductsController::class, 'create'])->name('rooms.create');
@@ -59,6 +61,7 @@ Route::group(['prefix' => 'rooms', 'middleware' => 'user'], function () {
     Route::get('/destroy/{id}', [ProductsController::class, 'destroy'])->name('rooms.destroy');
     Route::get('/detail/{id}', [ProductsController::class, 'detail'])->name('rooms.detail');
 });
+//mã giảm giá
 Route::group(['prefix' => 'sale', 'middleware' => 'user'], function () {
     Route::get('/', [SaleController::class, 'index'])->name('sale.index');
     Route::get('/create', [SaleController::class, 'create'])->name('sale.create');
@@ -67,6 +70,7 @@ Route::group(['prefix' => 'sale', 'middleware' => 'user'], function () {
     Route::post('/update/{id}', [SaleController::class, 'update'])->name('sale.update');
     Route::get('/destroy/{id}', [SaleController::class, 'destroy'])->name('sale.destroy');
 });
+//banner
 Route::group(['prefix' => 'banner', 'middleware' => 'user'], function () {
     Route::get('/', [BannerController::class, 'index'])->name('banner.index');
     Route::get('/create', [BannerController::class, 'create'])->name('banner.create');
@@ -75,23 +79,21 @@ Route::group(['prefix' => 'banner', 'middleware' => 'user'], function () {
     Route::post('/update/{id}', [BannerController::class, 'update'])->name('banner.update');
     Route::get('/destroy/{id}', [BannerController::class, 'destroy'])->name('banner.destroy');
 });
-Route::prefix('hoadon')->group(function () {
-    Route::get('/', [HoadonsController::class, 'index']);
+//user
+Route::group(['prefix' => 'user', 'middleware' => 'user'], function () {
+    Route::get('/user/list', [UserController::class, 'list'])->name('user.list');
 });
-
 require __DIR__ . '/auth.php';
 //route frontend
 Route::prefix('')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('user.index');
     Route::get('/detail/{id}', [UserController::class, 'detail'])->name('detail');
 });
-Route::group(['prefix' => 'checkout'], function () {
-    Route::get('/', [HoadonsController::class, 'form'])->name('checkout');
-    Route::post('/', [HoadonsController::class, 'submit_form'])->name('checkout');
-});
 
-// Route::get('/create', [BannerController::class, 'create'])->name('user.create');
-// Route::post('/store', [BannerController::class, 'store'])->name('user.store');
-// Route::get('/edit/{id}', [BannerController::class, 'edit'])->name('user.edit');
-// Route::post('/update/{id}', [BannerController::class, 'update'])->name('user.update');
-// Route::get('/destroy/{id}', [BannerController::class, 'destroy'])->name('user.destroy');
+Route::group(['prefix' => 'hoadon'], function () {
+    Route::get('/', [HoadonsController::class, 'index'])->name('hoadon.index')->middleware('auth');
+    Route::get('/create', [HoadonsController::class, 'create'])->name('hoadon.create')->middleware('auth');
+    Route::post('/store', [HoadonsController::class, 'store'])->name('hoadon.store')->middleware('auth');
+    Route::post('/vnPay' , [HoadonsController::class,'vnPay_payment'])->name('hoadon.vnPay')->middleware('auth');
+    Route::get('/success' , [HoadonsController::class,'success'])->name('hoadon.seccess')->middleware('auth');;
+});

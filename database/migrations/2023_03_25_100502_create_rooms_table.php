@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('price');
             $table->integer('cate_id');
+            $table->string('mota');
             $table->timestamps();
         });
     }

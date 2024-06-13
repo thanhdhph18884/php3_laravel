@@ -10,8 +10,7 @@ class SaleController extends Controller
     public function index()
     {
         $sales = SaleModel::paginate(5);
-
-        return view('sales.list', compact('sales'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('sales.list', compact('sales'));
     }
     public function create()
     {
@@ -33,8 +32,6 @@ class SaleController extends Controller
             'end_date.date' => 'Ngày kết thúc không hợp lệ.',
             'end_date.after_or_equal' => 'Ngày kết thúc phải sau hoặc bằng ngày bắt đầu.',
         ]);
-
-
         SaleModel::create([
             'name' => $request->name,
             'start_date' => $request->start_date,

@@ -20,7 +20,7 @@ class  ProductsController extends Controller
             ->orderBy('room_id', 'DESC')
             ->paginate(5);
         // dd($rooms);
-        return view('rooms.list', compact('rooms'))->with('i', (request()->input('page', 1) - 1) * 3);
+        return view('rooms.list', compact('rooms'));
     }
     public function create()
     {
@@ -74,7 +74,7 @@ class  ProductsController extends Controller
 
         // Lấy danh sách danh mục để hiển thị lên dropdown
         $categories = Categories::all();
-
+        
         // Trả về view edit với dữ liệu phòng cần sửa và danh sách danh mục
         return view('rooms.edit', compact('room', 'categories'));
     }
@@ -101,7 +101,6 @@ class  ProductsController extends Controller
         $images = $request->file('images');
         $name = time() . '_' . $images->getClientOriginalName();
         $images->move(public_path('images'), $name);
-
         $image_path = './images/' . $name;
         $room->images = $image_path;
         // Save product

@@ -47,8 +47,8 @@
         {{-- Role --}}
         <div>
             <x-input-label for="role" :value="__('Role')" />
-            <x-text-input id="role" class="block mt-1 w-full" type="number" name="role" min="0"
-                max="1" :value="old('role')" required autofocus autocomplete="name" />
+            <x-text-input id="role" class="block mt-1 w-full" type="number" name="role" value="1"
+                value="old('role')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('role')" class="mt-2" />
         </div>
 
