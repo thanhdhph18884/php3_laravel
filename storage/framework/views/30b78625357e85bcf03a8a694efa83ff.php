@@ -15,7 +15,7 @@
 
              </div>
              <div class="info">
-                 <a href="#" class="d-block">Trương tiến Đạt</a>
+                 <a href="#" class="d-block">Thanhdhph18884</a>
              </div>
          </div>
 

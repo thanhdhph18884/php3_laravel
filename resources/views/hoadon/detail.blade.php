@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="hero-text">
-                        <h1>Tiến Đạt Hotel</h1>
+                        <h1>Thanhdhph18884 Hotel</h1>
                         <p>Phục vụ tận tình chu đáo với các dịch vụ đẳng cấp, xứng đáng với số tiền
                             mà bạn bỏ ra
                         </p>

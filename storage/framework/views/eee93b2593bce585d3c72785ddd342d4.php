@@ -11,8 +11,8 @@
          <!-- Sidebar user panel (optional) -->
          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
              <div class="image">
-{{--                 <img src="{{ asset('adminlte/docs/assets/img/admin.jpg') }}" class="img-circle elevation-2"--}}
-{{--                     alt="Image">--}}
+
+
              </div>
              <div class="info">
                  <a href="#" class="d-block">Thanhdhph18884</a>
@@ -47,7 +47,7 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="{{ route('categories.index') }}" class="nav-link">
+                             <a href="<?php echo e(route('categories.index')); ?>" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Danh sách danh mục </p>
                              </a>
@@ -64,30 +64,14 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="{{ route('rooms.index') }}" class="nav-link">
+                             <a href="<?php echo e(route('rooms.index')); ?>" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Danh sách phòng </p>
                              </a>
                          </li>
                      </ul>
                  </li>
-                 {{-- <li class="nav-item menu-open">
-                     <a href="#" class="nav-link nav-link active">
-                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                         <p>
-                             Người dùng
-                             <i class="right fas fa-angle-left"></i>
-                         </p>
-                     </a>
-                     <ul class="nav nav-treeview">
-                         <li class="nav-item">
-                             <a href="{{ BASE_URL }}users/" class="nav-link">
-                                 <i class="far fa-circle nav-icon"></i>
-                                 <p>List user register</p>
-                             </a>
-                         </li>
-                     </ul>
-                 </li> --}}
+                 
                  <li class="nav-item menu-open">
                      <a href="#" class="nav-link nav-link active">
                          <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -98,7 +82,7 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="{{ route('sale.index') }}" class="nav-link">
+                             <a href="<?php echo e(route('sale.index')); ?>" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Danh sách các mã khuyến mại</p>
                              </a>
@@ -115,7 +99,7 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="{{ route('banner.index') }}" class="nav-link">
+                             <a href="<?php echo e(route('banner.index')); ?>" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Danh sách banner</p>
                              </a>
@@ -132,7 +116,7 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="{{ route('hoadon.index') }}" class="nav-link">
+                             <a href="<?php echo e(route('hoadon.index')); ?>" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Khách hàng đã đặt hàng</p>
                              </a>
@@ -149,7 +133,7 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="{{ route('user.list') }}" class="nav-link">
+                             <a href="<?php echo e(route('user.list')); ?>" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Danh sách khách hàng</p>
                              </a>
@@ -171,3 +155,4 @@
      </div>
      <!-- /.sidebar -->
  </aside>
+<?php /**PATH C:\xampp\htdocs\php3_laravel\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

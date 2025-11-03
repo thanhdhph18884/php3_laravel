@@ -1,0 +1,115 @@
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+        <i class="icon_menu"></i>
+    </div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <i class="icon_close"></i>
+        </div>
+        <div class="search-icon  search-switch">
+            <i class="icon_search"></i>
+        </div>
+        <div class="header-configure-area">
+            <div class="language-option">
+                <img src="img/flag.jpg" alt="">
+                <span>EN <i class="fa fa-angle-down"></i></span>
+                <div class="flag-dropdown">
+                    <ul>
+                        <li><a href="#">zi</a></li>
+                        <li><a href="#">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="bk-btn">Booking Now</a>
+        </div>
+        <nav class="mainmenu mobile-menu">
+            <ul>
+                    <li class="active"><a href="http://127.0.0.1:8000/">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/">Rooms</a></li>
+                <li><a href="http://127.0.0.1:8000/">About Us</a></li>
+                <li><a href="http://127.0.0.1:8000/">Pages</a>
+                    
+                </li>
+                <li><a href="http://127.0.0.1:8000/">News</a></li>
+                <li><a href="http://127.0.0.1:8000/">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="top-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-tripadvisor"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+        <ul class="top-widget">
+            <li><i class="fa fa-phone"></i> 090909090</li>
+            <li><i class="fa fa-envelope"></i>tiendathotel.vn</li>
+        </ul>
+    </div>
+    <header class="header-section">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="tn-left">
+                            <li><i class="fa fa-phone"></i> 090909090</li>
+                            <li><i class="fa fa-envelope"></i> tiendathotel.vn</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="tn-right">
+                            <div>
+                                <a class="btn btn-success" href="http://127.0.0.1:8000/register">Đăng ký</a>
+                                <a class="btn btn-success" href="http://127.0.0.1:8000/dashboard">Quản lý tài khoản</a>
+                                <a class="btn btn-success" href="http://127.0.0.1:8000/login">Đăng nhập</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="nav-menu">
+                            <nav class="mainmenu">
+                                <ul>
+                                    <li class="active"><a href="http://127.0.0.1:8000/">Home</a></li>
+                                    <li><a href="http://127.0.0.1:8000/">Rooms</a></li>
+                                    <li><a href="http://127.0.0.1:8000/">About Us</a></li>
+                                    <li><a href="http://127.0.0.1:8000/">Pages</a>
+                                        <ul class="dropdown">
+                                            <li><a href="http://127.0.0.1:8000/">Room Details</a></li>
+                                            <li><a href="http://127.0.0.1:8000/">Blog Details</a></li>
+                                            <li><a href="#">Family Room</a></li>
+                                            <li><a href="#">Premium Room</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="http://127.0.0.1:8000/">News</a></li>
+                                    <li><a href="http://127.0.0.1:8000/">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <div class="nav-right search-switch">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<?php /**PATH C:\xampp\htdocs\php3_laravel\resources\views/user/header.blade.php ENDPATH**/ ?>

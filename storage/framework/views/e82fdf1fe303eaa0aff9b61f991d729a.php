@@ -72,3 +72,4 @@
         </div>
     </footer>
     <!-- Footer Section End -->
+<?php /**PATH C:\xampp\htdocs\php3_laravel\resources\views/user/footer.blade.php ENDPATH**/ ?>
