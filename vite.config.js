@@ -11,5 +11,5 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    base: '/booking_hotel',
+    base: '/php3_laravel',
 });
