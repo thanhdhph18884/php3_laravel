@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - main
+
 permissions:
-  contents: write      
+  contents: write
 
 jobs:
   build-deploy:
@@ -18,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22.12.0 
+          node-version: 22.12.0
 
       - name: Install dependencies
         run: npm install
@@ -30,6 +31,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./dist
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
